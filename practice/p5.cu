@@ -3,7 +3,7 @@
 //)
 ////    first, last - the range of elements to sum
 ////    init - initial value of the sum
-//À§¿¡ ¾Æ¹«°Íµµ ¾ø¾î¼­ ÁÖ¼® Ã³¸®ÇÔ
+//ìœ„ì— ì•„ë¬´ê²ƒë„ ì—†ì–´ì„œ ì£¼ì„ ì²˜ë¦¬í•¨
 
 template<class InputIt, class T>
 T accumulate(InputIt first, InputIt last, T init)
@@ -13,12 +13,8 @@ T accumulate(InputIt first, InputIt last, T init)
 	}
 	return init;
 }
-
 #include "cuda_runtime.h"
 #include "device_launch_parameters.h"
-//#include <cuda.h>
-//#include <device_functions.h>
-//#include <cuda_runtime_api.h>
 
 // This example demonstrates a parallel sum reduction
 // using two kernel launches
