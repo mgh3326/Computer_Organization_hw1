@@ -70,7 +70,7 @@ __global__ void block_sum(const float *input,
 }
 int main(void) {
 	// create array of 256k elements
-	const int num_elements = 1 << 18;
+	const int num_elements = 1 << 20;
 
 	// generate random input on the host
 	std::vector<float>  h_input(num_elements);
@@ -88,7 +88,7 @@ int main(void) {
 		num_elements);
 	cudaMemcpy(d_input, &h_input[0], sizeof(float) *
 		num_elements, cudaMemcpyHostToDevice);
-	const size_t block_size = 1024;
+	const size_t block_size = 512;
 	const size_t num_blocks = (num_elements / block_size)
 		+ ((num_elements%block_size) ? 1 : 0);
 	// allocate space to hold one partial sum per block, plus

@@ -4,9 +4,9 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#define N 1000	//  number of threads per block
+#define N 100	//  number of threads per block
 
-#define T 10000// number of block
+#define T 100000// number of block
 
 
 __global__ void vecAdd(int *A, int *B, int *C) {
@@ -42,5 +42,3 @@ int main(int argc, char **argv) {
 	
 	return(0);
 }
-// Helper function for using CUDA to add vectors in parallel.
-
